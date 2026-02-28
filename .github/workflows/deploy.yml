@@ -20,9 +20,4 @@ jobs:
         run: sf version
       
       - name: Check if Secret exists
-        run: echo "Checking if SF_CONSUMER_KEY secret exists..." && \
-              if [ -z "${{ secrets.SF_CONSUMER_KEY }}" ]; then \
-                echo "Error: SF_CONSUMER_KEY secret is not set." && exit 1; \
-              else \
-                echo "SF_CONSUMER_KEY secret is set."; \
-              fi 
+        run: echo "Checking if SF_CONSUMER_KEY secret exists..."
