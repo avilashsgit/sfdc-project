@@ -10,23 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
       
       - name: Set up Salesforce CLI
         run: npm install @salesforce/cli --global
 
       - name: Check If CLI Installed
         run: sf version
-      
-      - name: Check if Secret exists
-        run: |
-          if [ -z "${{secrets.SF_CONSUMER_KEY}}" ]; then
-            echo "Secret is NOT set"
-            exit 1
-          else
-            echo "Secret is set"
-          fi
       
       - name: Create server key
         run: echo "${{secrets.SF_JWT_KEY}}" > server.key
