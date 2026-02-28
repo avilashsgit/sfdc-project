@@ -1,5 +1,10 @@
 public class ContactCreator {
 
+    /**
+     * @Description: Creates contacts based on Account that has been published
+     * Some other changes
+     * @Author : Avilash Basu
+     */
     @future
     public static void createContactForAccount(List<String> accountIds) {
         List<Contact> contacts =  new List<Contact>();
