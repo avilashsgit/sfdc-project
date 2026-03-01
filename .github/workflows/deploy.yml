@@ -30,6 +30,6 @@ jobs:
 
       - name: Running Script
         run: |
-          chmod +x scripts/deploy.sh
-          ./scripts/deploy.sh
+          chmod +x pipeline/deploy-dev.sh
+          ./pipeline/deploy-dev.sh
           
