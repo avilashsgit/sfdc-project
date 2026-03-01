@@ -12,7 +12,7 @@ public class ContactCreator {
         for(String accountId : accountIds) {
             Contact con = new Contact();
             con.AccountId=accountId;
-            con.FirstName = 'Contact For';
+            con.FirstName = 'User Contact created now';
             con.LastName = accountMap.get(accountId)?.Name;
             
             contacts.add(con);
