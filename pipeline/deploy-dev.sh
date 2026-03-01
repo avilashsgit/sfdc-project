@@ -7,10 +7,10 @@ echo "Checking if CLI installed"
 sf version
 
 echo "Decoding JWT Key"
-echo "$SF_JWT_KEY"
+echo "$SF_JWT_KEY" > server.key
 
 
 echo "Authorizing org"
-f org login jwt --client-id $SF_CONSUMER_KEY --jwt-key-file server.key --username $SF_USERNAME --instance-url $SF_INSTANCE_URL
+sf org login jwt --client-id $SF_CONSUMER_KEY --jwt-key-file server.key --username $SF_USERNAME --instance-url $SF_INSTANCE_URL
 
 echo "Deploying Metadata"
