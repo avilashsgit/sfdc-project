@@ -7,7 +7,7 @@ echo "Checking if CLI installed"
 sf version
 
 echo "Decoding JWT Key"
-echo "$SF_JWT_KEY" | base64 --decode > server.key
+echo "$SF_JWT_KEY"
 
 
 echo "Authorizing org"
