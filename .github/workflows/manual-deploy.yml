@@ -1,0 +1,27 @@
+name: Manual Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment_name:
+        description: "Environment (qa / production)"
+        required: true
+        default: "qa"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout selected Branch
+        uses: actions/checkout@v3
+
+      - name: Running Script
+        env:
+          SF_CONSUMER_KEY: ${{secrets.SF_CONSUMER_KEY}}
+          SF_INSTANCE_URL: ${{secrets.SF_INSTANCE_URL}}
+          SF_JWT_KEY: ${{secrets.SF_JWT_KEY}}
+          SF_USERNAME: ${{secrets.SF_USERNAME}}
+        run: |
+          chmod +x pipeline/deploy-dev.sh
+          ./pipeline/deploy-dev.sh
